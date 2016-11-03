@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,maximum-scale=1">
+		<title></title>
+        <script src="app.js"></script>
+        <script>
+			setSize();
+            var heightRem;
+	        function setSize(){
+	        	var html = document.documentElement;        
+	            var iWidth  = html.getBoundingClientRect().right;
+	           	html.style.fontSize = iWidth/7.5 +"px";
+	           	heightRem =  window.screen.height *7.5/iWidth;
+	        }
+		</script>
+	</head>
+	<body>
+</html>
