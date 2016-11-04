@@ -40,6 +40,8 @@
     "gulp"
   ],
   "dependencies": {
-    "gulp-sass": "^2.3.2"
+    "gulp-sass": "^2.3.2",
+    "gulp-shell": "^0.5.2",
+    "webpack-dev-middleware": "^1.8.4"
   }
 }

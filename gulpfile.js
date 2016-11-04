@@ -15,6 +15,10 @@ var sass            = require('gulp-sass');             // sass编译
 var cleanCSS        = require('gulp-clean-css');        // 压缩css
 var header          = require('gulp-header');           // header
 var htmlmin         = require('gulp-htmlmin');          // html压缩
+var shell           = require('gulp-shell');
+var DevMiddleware   = require("webpack-dev-middleware");
+
+
 
 
 /** banner配置 **/
@@ -69,12 +73,16 @@ gulp.task('clean', function(cb) {
 /** 
  *  执行webpack打包
  */
-gulp.task('webpack', function(cb) {
+gulp.task('webpack', ['clean'], function(cb) {
     webpack(webpackConfig,cb);
 });
 gulp.task('webpack-noclean', function(cb) {
-    webpack(webpackConfig,cb);
+    DevMiddleware(webpack(webpackConfig,cb), {
+
+    })
 });
+
+
 
 gulp.task('main',['webpack-noclean'], function() {
      return gulp.src('./dist/*.js')
